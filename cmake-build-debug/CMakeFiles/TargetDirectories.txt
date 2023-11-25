@@ -1,4 +1,5 @@
 C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug/CMakeFiles/clionnn.dir
 C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug/CMakeFiles/clionnn_0.dir
+C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug/CMakeFiles/clionnn_1.dir
 C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug/CMakeFiles/rebuild_cache.dir

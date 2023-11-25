@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -50,6 +52,13 @@
 					"id" : "clionnn_0::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-clionnn_0-Debug-5009ece883661c8f5d40.json",
 					"name" : "clionnn_0",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clionnn_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clionnn_1-Debug-6f48abedd2dd3c45b41a.json",
+					"name" : "clionnn_1",
 					"projectIndex" : 0
 				}
 			]
