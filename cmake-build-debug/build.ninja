@@ -115,8 +115,8 @@ build clionnn_0.exe: CXX_EXECUTABLE_LINKER__clionnn_0_Debug CMakeFiles/clionnn_0
 
 build cmake_object_order_depends_target_clionnn_1: phony || CMakeFiles/clionnn_1.dir
 
-build CMakeFiles/clionnn_1.dir/lol.cpp.obj: CXX_COMPILER__clionnn_1_Debug C$:/Users/MAGIC$ MSI/Desktop/clionnn/lol.cpp || cmake_object_order_depends_target_clionnn_1
-  DEP_FILE = CMakeFiles\clionnn_1.dir\lol.cpp.obj.d
+build CMakeFiles/clionnn_1.dir/normal_seg_tree.cpp.obj: CXX_COMPILER__clionnn_1_Debug C$:/Users/MAGIC$ MSI/Desktop/clionnn/normal_seg_tree.cpp || cmake_object_order_depends_target_clionnn_1
+  DEP_FILE = CMakeFiles\clionnn_1.dir\normal_seg_tree.cpp.obj.d
   FLAGS = -g -std=gnu++20
   OBJECT_DIR = CMakeFiles\clionnn_1.dir
   OBJECT_FILE_DIR = CMakeFiles\clionnn_1.dir
@@ -129,7 +129,7 @@ build CMakeFiles/clionnn_1.dir/lol.cpp.obj: CXX_COMPILER__clionnn_1_Debug C$:/Us
 #############################################
 # Link the executable clionnn_1.exe
 
-build clionnn_1.exe: CXX_EXECUTABLE_LINKER__clionnn_1_Debug CMakeFiles/clionnn_1.dir/lol.cpp.obj
+build clionnn_1.exe: CXX_EXECUTABLE_LINKER__clionnn_1_Debug CMakeFiles/clionnn_1.dir/normal_seg_tree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\clionnn_1.dir

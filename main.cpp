@@ -58,56 +58,60 @@ int dx[] {0 , 0 , -1 , 1 ,-1 , 1 , 1 , -1};
 int dy[] {-1 , 1 , 0 , 0 , -1 , 1 , -1 , 1};
 
 
-const int M = 2e7+5;
+const int M = 6e5+5;
 
 ll INF = 1e12;
-int n , dfn , qs ;
-vector < vector < int >> g;
-vector < vector< array< int , 3 > > > q;
-vector < int > p , st ,sz , inv , ans;
-multiset < int > ds;
-void init(){
-    inv =  p = sz = st = vector < int > (n+5);
-    q = vector < vector< array < int , 3 > > > (n+5);
-    g = vector < vector < int > > (n+5);
-    ans =vector < int > (qs+5);
-    dfn = 0;
-    assert (ds.empty());
-}
-void dfs (int node ,int pa){
-    sz[node] = 1; inv[st[node] = ++ dfn] = node;
-    for (auto &ch: g[node]){
-        if (ch == pa) continue;
-        dfs(ch , node);
-        sz[node]+=sz[ch];
-    }
-}
-void solve (int node, int pa , bool keep = 0){
-    int heavy = 0;
-    for (auto ch : g[node]) if (ch != pa && sz[ch] > sz [heavy]) heavy = ch;
-    for (auto ch : g[node]) if (ch ^pa && ch ^ heavy) solve(ch , node);
-    if (heavy) solve(heavy , node, 1);
-    // add node
-    ds.emplace (p[node]);
-    // add chs
-    for (auto ch : g[node]){
-        if (ch == pa || ch == heavy) continue;
-        for (int L = st[ch]; L < st [ch] + sz[ch] ; ++L)
-            ds.emplace(p[inv[L]]);
-    }
 
-    // answer queries
-    for (auto [L , R , idx] : q[node]){
-         auto it = ds.lower_bound(L);
-         ans[idx] = (it != ds.end() && *it <= R);
+struct sss{
+    int n;
+    vector < int > t;
+    void init(int _n){
+        n = _n + 5;
+        while (popcount(n) != 1) ++n;
+        t = vector < int > (2 * n , -1);
     }
+    int merge (int u, int v){
+        return u & v;
+    }
+    void upd (int node , int nl , int nr , int idx , int v , int k){
+        if (nl + 1 == nr){
+            if ((k & v) == k) t[node] = v;
+            return;
+        }
+        int md = (nl + nr) >> 1;
+        if (idx < md) upd(2 * node + 1 , nl , md , idx, v, k);
+        else upd(2* node + 2 , md, nr, idx, v ,k);
+        t[node] = merge (t[2* node + 1] , t[2* node + 2]);
+    }
+    int query (int node , int nl , int nr , int ql , int qr){
+        if (nl >= ql && qr >= nr) return t[node];
+        int md = (nl + nr ) >> 1;
+        if (qr <= md) return query(2* node + 1 , nl , md , ql ,qr);
+        if (ql >= md) return query (2* node + 2, md, nr , ql ,qr);
+        return merge(query (2* node + 1 , nl , md , ql ,qr), query (2 * node + 2, md, nr , ql , qr));
+    }
+    void upd (int idx , int v , int k){
+        upd(0 , 0 , n , idx , v, k);
+    }
+    int query (int L , int R){
+        return query (0 ,0 , n , L , R+ 1);
+    }
+};
 
-    for (int L = st[node]; L < st[node] +sz[node] && !keep ; ++L)
-        ds.erase(ds.find(p[inv[L]]));
-
-}
 void main_(int tc) {
-  lol
+    ll n, k ,q; cin >> n >> k >> q;
+    vector < ll > a(n+1);
+    sss t; t.init(n);
+    for (int i = 1; i <= n; ++i){
+        cin >> a[i];
+        t.upd(i, a[i], k);
+    }
+    for (int _ = 1; _ <= q; ++ _){
+        int L , R; cin >> L >> R;
+        if(t.query(L , R) == k) py
+        else pn
+    }
+
 
 
 
@@ -118,7 +122,7 @@ signed main() {
     ios_base::sync_with_stdio(0);cin.tie(0); cout.tie(0);
     //freopen("trains.in", "r", stdin);
     //freopen("output.txt", "w", stdout);
-    int tt = 1, tc = 0 ; cin >> tt;
+    int tt = 1, tc = 0 ;// cin >> tt;
     while (tt--) main_(++tc);
     #ifndef ONLINE_JUDGE
     cout << "Running Time: " << 1.0 * clock() / CLOCKS_PER_SEC << " s .\n";
