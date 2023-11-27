@@ -5,6 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(clionnn main.cpp)
 add_executable(clionnn_0 kokey.cpp)
-add_executable(clionnn_1 normal_seg_tree.cpp)
 
 

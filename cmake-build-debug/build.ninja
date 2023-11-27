@@ -106,39 +106,6 @@ build clionnn_0.exe: CXX_EXECUTABLE_LINKER__clionnn_0_Debug CMakeFiles/clionnn_0
   TARGET_IMPLIB = libclionnn_0.dll.a
   TARGET_PDB = clionnn_0.exe.dbg
 
-# =============================================================================
-# Object build statements for EXECUTABLE target clionnn_1
-
-
-#############################################
-# Order-only phony target for clionnn_1
-
-build cmake_object_order_depends_target_clionnn_1: phony || CMakeFiles/clionnn_1.dir
-
-build CMakeFiles/clionnn_1.dir/normal_seg_tree.cpp.obj: CXX_COMPILER__clionnn_1_Debug C$:/Users/MAGIC$ MSI/Desktop/clionnn/normal_seg_tree.cpp || cmake_object_order_depends_target_clionnn_1
-  DEP_FILE = CMakeFiles\clionnn_1.dir\normal_seg_tree.cpp.obj.d
-  FLAGS = -g -std=gnu++20
-  OBJECT_DIR = CMakeFiles\clionnn_1.dir
-  OBJECT_FILE_DIR = CMakeFiles\clionnn_1.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target clionnn_1
-
-
-#############################################
-# Link the executable clionnn_1.exe
-
-build clionnn_1.exe: CXX_EXECUTABLE_LINKER__clionnn_1_Debug CMakeFiles/clionnn_1.dir/normal_seg_tree.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\clionnn_1.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = clionnn_1.exe
-  TARGET_IMPLIB = libclionnn_1.dll.a
-  TARGET_PDB = clionnn_1.exe.dbg
-
 
 #############################################
 # Utility command for edit_cache
@@ -169,8 +136,6 @@ build clionnn: phony clionnn.exe
 
 build clionnn_0: phony clionnn_0.exe
 
-build clionnn_1: phony clionnn_1.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -179,7 +144,7 @@ build clionnn_1: phony clionnn_1.exe
 #############################################
 # Folder: C:/Users/MAGIC MSI/Desktop/clionnn/cmake-build-debug
 
-build all: phony clionnn.exe clionnn_0.exe clionnn_1.exe
+build all: phony clionnn.exe clionnn_0.exe
 
 # =============================================================================
 # Built-in targets
