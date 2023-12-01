@@ -54,14 +54,14 @@ struct sss{
     void m (int L , int R , ll v){
         return m (0 , 0 , n , L ,  R + 1 , v);
     }
-    void upd (int node , int nl , int nr, int idx, ll v){
+    void upd (int node , int nl , int nr, int idx, ll v){ // take of lazy propagation
         drop(node , nl , nr);
         if (nl + 1 == nr) {
             t[node] = v;
             return ;
         }
         int md = (nl + nr ) >> 1;
-        drop(2 * node + 1 , nl , md);
+        drop(2 * node + 1 , nl , md);  // drop my children to take the correct values while i am jumping up to the parents in the backtracking part
         drop(2 * node + 2 , md , nr);
         if (idx < md) upd (2 * node + 1 , nl , md , idx, v);
         else upd (2 * node + 2 , md , nr , idx, v);
