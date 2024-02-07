@@ -1,7 +1,7 @@
 /*
 a simple hospital system consists of n number of specializations and for each one of them there is only m places avaible
 we can do operation like this 
-add patient
+add patient and if he is urgent 1 else 0
 print all patients for all specialization 
 dr ask for patinets form specific specialization
 */
