@@ -8,7 +8,7 @@ struct sss{
         while (popcount(n) != 1) ++n;
         t = vector < T > (2 * n , INF);
     }
-     T merge (int u, int v){
+     T merge (T u, T v){
         return min(u , v);
     }
     void upd (int node , int nl , int nr , int idx , T v ){
