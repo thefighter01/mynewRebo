@@ -82,7 +82,7 @@ public:
         assert(totalBorrowed > 0);
         --totalBorrowed;
     }
-    bool has_prefix(string prefix){ // hay can we kmp algo here ?
+    bool has_prefix(string prefix){ // hay can we do kmp algo here ?
         int sz = (int) prefix.size();
         if ((int)name.size() < sz) return 0;
         for (int i = 0; i < sz; ++i) if (prefix[i] != name[i]) return 0;
