@@ -56,11 +56,11 @@ int solve(int L , int R){
     return query(1 , mx , L , R , root);
 }
 void work(int L , int R , int v = 0){
-    auto it = has.lower_bound({L , -1 , -1});
-      while (it !== has.end() &&it->L <= R){
+     auto it = has.lower_bound({L , -1 , -1});
+      while (it != has.end() &&it->L <=R){
             auto temp = *it;
             ans-= solve(temp.L , temp.R);
-            it=has.erase(it);
+            it = has.erase(it);
         }
         ans+= solve(L , R);
         has.insert({L , R  , v});
